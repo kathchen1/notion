@@ -5,8 +5,8 @@
     <style>
       #lbl {
         display: flex;
-        font-family: 'Courier New', monospace;
-        font-size: 20pt;
+        font-family: 'helvetica';
+        font-size: 17pt;
         color: #68B033;
         padding: 5px;
         border: 1px solid #ffffff;
@@ -23,7 +23,7 @@
       }
 
       #date{
-          font-size:20pt;
+          font-size:19pt;
           font-weight: bold;
       }
 
@@ -54,12 +54,14 @@
     var today = new Date();
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
-    var date = `오늘 ${dayOfWeek}이애요, ${monthNames[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`;
+    var date = `오늘 ${dayOfWeek}이에요`;
 
+    var greet = `${today.getFullYear()}년 ${monthNames[today.getMonth()]} ${today.getDate()}일`;
 
     document.getElementById('lbl').innerHTML = `
         <div class="container">
           <div id="date"> ${date}</div>
+          <div class="greeting">${greet}</div>
         <div/>
     `;
 </script> 
