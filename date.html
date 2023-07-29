@@ -1,11 +1,12 @@
 <html> 
 <head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
     <title>Date Widget Notion</title> 
     <style>
       #lbl {
         display: flex;
         font-family: 'Courier New', monospace;
-        font-size: 18pt;
+        font-size: 20pt;
         color: #68B033;
         padding: 5px;
         border: 1px solid #ffffff;
@@ -22,7 +23,7 @@
       }
 
       #date{
-          font-size:12pt;
+          font-size:20pt;
           font-weight: bold;
       }
 
@@ -45,29 +46,20 @@
     weekday[5] = "금요일";
     weekday[6] = "토요일";
 
-    const monthNames = ["", "february", "march", "april", "may", "june",
-      "july", "august", "september", "october", "november", "december"
+    const monthNames = ["일월", "이월", "삼월", "사월", "오월", "유월",
+      "칠월", "팔월", "팔월", "시월", "십일월", "십이월"
     ];
 
     
     var today = new Date();
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
-    var date = `${dayOfWeek}, ${monthNames[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`;
+    var date = `오늘 ${dayOfWeek}이애요, ${monthNames[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`;
 
-    var greet;
-
-    if (hrs < 12)
-        greet = 'good morning, your name.  ';
-    else if (hrs >= 12 && hrs <= 17)
-        greet = 'good afternoon, your name. ';
-    else if (hrs >= 17 && hrs <= 24)
-        greet = 'good evening, your name.  ';
 
     document.getElementById('lbl').innerHTML = `
         <div class="container">
           <div id="date"> ${date}</div>
-          <div class="greeting">${greet}</div>
         <div/>
     `;
 </script> 
